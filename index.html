@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biscotti - 唯一無二のお菓子を作ります</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <span class="logo-jp">ビスコッティ</span>
+                    <h1>biscotti</h1>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#products">オンライン注文</a></li>
+                    <li><a href="#location">店舗情報</a></li>
+                </ul>
+                <div class="header-icons">
+                    <button class="icon-button search-icon" aria-label="検索">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 19L13 13M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="icon-button cart-icon" aria-label="カート">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2H4L4.4 6M4.4 6L6 14H16M4.4 6H6M16 14H6M16 14C16.5304 14 17.0391 14.2107 17.4142 14.5858C17.7893 14.9609 18 15.4696 18 16C18 16.5304 17.7893 17.0391 17.4142 17.4142C17.0391 17.7893 16.5304 18 16 18C15.4696 18 14.9609 17.7893 14.5858 17.4142C14.2107 17.0391 14 16.5304 14 16C14 15.4696 14.2107 14.9609 14.5858 14.5858C14.9609 14.2107 15.4696 14 16 14ZM6 16C6 16.5304 6.21071 17.0391 6.58579 17.4142C6.96086 17.7893 7.46957 18 8 18C8.53043 18 9.03914 17.7893 9.41421 17.4142C9.78929 17.0391 10 16.5304 10 16C10 15.4696 9.78929 14.9609 9.41421 14.5858C9.03914 14.2107 8.53043 14 8 14C7.46957 14 6.96086 14.2107 6.58579 14.5858C6.21071 14.9609 6 15.4696 6 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <!-- 左側：店舗写真エリア -->
+        <div class="main-left">
+            <div class="store-images">
+                <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="店舗写真" class="store-photo">
+            </div>
+        </div>
+
+        <!-- 右側：商品情報・テキストエリア -->
+        <div class="main-right">
+            <!-- テキスト・CTA -->
+            <div class="main-text-area">
+                <h2 class="main-heading">店舗の焼き菓子をご自宅でも<br>お楽しみいただけます</h2>
+                <p class="main-description">
+                    人気のアイシングクッキーや焼き菓子が、オンラインショップでも<br>ご購入いただけるようになりました。<br>ぜひ、ご自宅やギフトにご利用ください。
+                </p>
+                <a href="#products" class="cta-button">すべての商品を見る</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- 商品一覧セクション（自動カルーセル） -->
+    <section id="products" class="products-section">
+        <div class="products-header">
+            <div class="container">
+                <h2 class="section-title">商品一覧</h2>
+                <p class="section-subtitle">その日によって出るお菓子は異なっています</p>
+            </div>
+        </div>
+        <div class="carousel-wrapper-full">
+            <div class="carousel-wrapper">
+                <div class="carousel-container" id="carousel">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- ループ用に複製（最初のセット） -->
+                        <div class="carousel-item">
+                            <div class="product-image">
+                                <div class="image-placeholder">
+                                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="ディアマンクッキー">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>ディアマンクッキーチョコ (5枚入り)</h3>
+                                <p class="product-price">¥400</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="product-image">
+                                <div class="image-placeholder">
+                                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="ビスコッティ">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>ビスコッティ くるみチョコ(2本入り)</h3>
+                                <p class="product-price">¥300</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="product-image">
+                                <div class="image-placeholder">
+                                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="アイシングクッキー">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>アイシングクッキー</h3>
+                                <p class="product-price">価格はお問い合わせください</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="product-image">
+                                <div class="image-placeholder">
+                                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="オーダーメイドケーキ">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>オーダーメイドケーキ</h3>
+                                <p class="product-price">価格はお問い合わせください</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="product-image">
+                                <div class="image-placeholder">
+                                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="季節のお菓子">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>季節のお菓子</h3>
+                                <p class="product-price">価格はお問い合わせください</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="product-image">
+                                <div class="image-placeholder">
+                                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="焼き菓子">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>焼き菓子</h3>
+                                <p class="product-price">価格はお問い合わせください</p>
+                            </div>
+                        </div>
+                        <!-- ループ用に複製（2回目のセット） -->
+                        <div class="carousel-item">
+                            <div class="product-image">
+                                <div class="image-placeholder">
+                                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="ディアマンクッキー">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>ディアマンクッキーチョコ (5枚入り)</h3>
+                                <p class="product-price">¥400</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="product-image">
+                                <div class="image-placeholder">
+                                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="ビスコッティ">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>ビスコッティ くるみチョコ(2本入り)</h3>
+                                <p class="product-price">¥300</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="product-image">
+                                <div class="image-placeholder">
+                                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="アイシングクッキー">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>アイシングクッキー</h3>
+                                <p class="product-price">価格はお問い合わせください</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="product-image">
+                                <div class="image-placeholder">
+                                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="オーダーメイドケーキ">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>オーダーメイドケーキ</h3>
+                                <p class="product-price">価格はお問い合わせください</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="product-image">
+                                <div class="image-placeholder">
+                                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="季節のお菓子">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>季節のお菓子</h3>
+                                <p class="product-price">価格はお問い合わせください</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="product-image">
+                                <div class="image-placeholder">
+                                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="焼き菓子">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3>焼き菓子</h3>
+                                <p class="product-price">価格はお問い合わせください</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="前へ">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="次へ">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="products-footer">
+            <div class="container">
+                <div class="products-note">
+                    <p>※ 商品は日によって異なります。詳細はECサイトまたはSNSをご確認ください。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 店舗情報セクション -->
+    <section id="location" class="location-section">
+        <div class="container">
+            <div class="location-content">
+                <!-- 左側：店舗写真 -->
+                <div class="location-image">
+                    <img src="./スクリーンショット 2025-12-21 16.55.56.png" alt="店舗内装写真" class="store-interior-photo">
+                </div>
+                <!-- 右側：店舗情報 -->
+                <div class="location-info">
+                    <h2 class="location-title">店舗情報</h2>
+                    <div class="location-details">
+                        <div class="detail-item">
+                            <strong>住所</strong>
+                            <p>〒252-0206 神奈川県相模原市中央区淵野辺3-15-7</p>
+                        </div>
+                        <div class="detail-item">
+                            <strong>アクセス</strong>
+                            <p>JR横浜線「淵野辺駅」から徒歩約5分</p>
+                        </div>
+                        <div class="detail-item">
+                            <strong>営業時間</strong>
+                            <p>10:00~18:00</p>
+                        </div>
+                        <div class="detail-item">
+                            <strong>電話番号</strong>
+                            <p>042-704-8525</p>
+                        </div>
+                        <div class="detail-item">
+                            <strong>定休日</strong>
+                            <p>不定休</p>
+                        </div>
+                        <div class="detail-item">
+                            <strong>駐車場</strong>
+                            <p>駐車場はありませんので、車を利用する場合は近隣のコインパーキングをご利用ください。</p>
+                        </div>
+                        <div class="detail-item">
+                            <strong>営業日</strong>
+                            <p>営業日は不定期のため、インスタやアメブロで最新情報をご確認ください。</p>
+                        </div>
+                    </div>
+                    <a href="#" class="location-more-btn">もっと見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SNS連携セクション -->
+    <section class="sns-section">
+        <div class="container">
+            <h2 class="section-title">SNS & ONLINE SHOP</h2>
+            <div class="sns-links">
+                <a href="https://www.instagram.com/biscotti_cookies2023/" class="sns-link instagram">
+                    <span>Instagram</span>
+                </a>
+                <a href="https://biscotti-web.square.site/s/order#most-popular" class="sns-link ec">
+                    <span>ECサイト</span>
+                </a>
+                <a href="https://ameblo.jp/akina1242/" class="sns-link ameblo">
+                    <span>アメブロ</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Biscotti</h3>
+                    <p>唯一無二のお菓子を作ります</p>
+                </div>
+                <div class="footer-section">
+                    <h4>営業情報</h4>
+                    <p>営業時間・定休日・アクセス情報は<br>各SNSまたはお問い合わせください</p>
+                </div>
+                <div class="footer-section">
+                    <h4>ご予約</h4>
+                    <p>完全予約制<br>1ヶ月前から受付</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Biscotti. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
