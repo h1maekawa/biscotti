@@ -214,3 +214,26 @@ document.addEventListener('DOMContentLoaded', () => {
     moveCarousel(0, false);
     startAutoSlide();
 });
+
+// 店舗写真の自動スライドショー
+document.addEventListener('DOMContentLoaded', () => {
+    const storePhotos = document.querySelectorAll('.store-photo');
+    if (storePhotos.length === 0) return;
+    
+    let currentPhotoIndex = 0;
+    
+    // 最初の写真を表示
+    storePhotos[0].classList.add('active');
+    
+    // 自動切り替え
+    setInterval(() => {
+        // 現在の写真を非表示
+        storePhotos[currentPhotoIndex].classList.remove('active');
+        
+        // 次の写真のインデックスを計算
+        currentPhotoIndex = (currentPhotoIndex + 1) % storePhotos.length;
+        
+        // 次の写真を表示
+        storePhotos[currentPhotoIndex].classList.add('active');
+    }, 4000); // 4秒ごとに切り替え
+});
