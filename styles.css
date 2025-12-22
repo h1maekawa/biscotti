@@ -186,7 +186,7 @@ body {
 
 .main-right {
     background: var(--primary-color);
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -269,6 +269,7 @@ body {
 
 .products-header {
     margin-bottom: 3rem;
+    padding-top: 2rem;
 }
 
 .products-footer {
@@ -308,6 +309,7 @@ body {
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 }
 
 .carousel-item:hover {
@@ -544,6 +546,10 @@ body {
     color: var(--text-light);
 }
 
+.detail-item-long p {
+    font-size: 0.85rem;
+}
+
 .location-more-btn {
     display: inline-block;
     padding: 0.8rem 2.5rem;
@@ -698,11 +704,34 @@ body {
     
     .main-right {
         align-items: center;
+        padding: 2rem 1.5rem;
     }
     
     .main-text-area {
         text-align: center;
         max-width: 100%;
+        width: 100%;
+    }
+    
+    .main-heading {
+        font-size: 1.5rem;
+    }
+    
+    .main-description {
+        font-size: 0.9rem;
+    }
+    
+    .main-content {
+        margin-bottom: 2rem;
+    }
+    
+    .products-section {
+        padding: 2rem 0;
+    }
+    
+    .products-header {
+        padding-top: 3rem;
+        margin-bottom: 2rem;
     }
     
     .large-image {
@@ -829,20 +858,52 @@ body {
         width: 200px;
         text-align: center;
     }
+
+    .location-more-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (max-width: 480px) {
+    .main-right {
+        padding: 1.5rem 1rem;
+    }
+    
     .main-heading {
         font-size: 1.2rem;
+        line-height: 1.4;
     }
     
     .main-description {
         font-size: 0.85rem;
+        line-height: 1.6;
+    }
+    
+    .main-content {
+        margin-bottom: 3rem;
+    }
+    
+    .products-section {
+        padding: 3rem 0;
+    }
+    
+    .products-header {
+        padding-top: 4rem;
+        margin-bottom: 2rem;
     }
     
     .cta-button {
         padding: 0.8rem 2rem;
         font-size: 0.9rem;
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 1rem;
+    }
+    
+    .detail-item-long p {
+        font-size: 0.75rem;
     }
     
     .packaged-grid {

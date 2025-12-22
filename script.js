@@ -84,24 +84,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // 商品データ（ECサイトの商品ラインナップから）
 const products = [
-    { name: 'ビスコッティ くるみチョコ(2本入り)', price: '¥300', image: './img/product-01.jpg', alt: 'ビスコッティ くるみチョコ' },
-    { name: 'マカデミアナッツクッキー(4個入り)', price: '¥400', image: './img/product-02.jpg', alt: 'マカデミアナッツクッキー' },
-    { name: '塩バターサブレ(4枚入り)', price: '¥400', image: './img/product-03.jpg', alt: '塩バターサブレ' },
-    { name: 'ビスコッティ ストロベリー(2本入り)', price: '¥300', image: './img/product-04.jpg', alt: 'ビスコッティ ストロベリー' },
-    { name: 'ディアマンクッキーチョコ(5枚入り)', price: '¥400', image: './img/product-05.jpg', alt: 'ディアマンクッキーチョコ' },
-    { name: 'チョコチップクッキー(4枚入り)', price: '¥400', image: './img/product-06.jpg', alt: 'チョコチップクッキー' },
-    { name: 'メレンゲクッキー(13個入り)', price: '¥400', image: './img/product-07.jpg', alt: 'メレンゲクッキー' },
-    { name: 'メレンゲプレッツェル(4個入り)', price: '¥400', image: './img/product-08.jpg', alt: 'メレンゲプレッツェル' },
+    { name: 'ビスコッティ くるみチョコ<br>(2本入り)', price: '¥300', image: './img/product-01.jpg', alt: 'ビスコッティ くるみチョコ' },
+    { name: 'マカデミアナッツクッキー<br>(4個入り)', price: '¥400', image: './img/product-02.jpg', alt: 'マカデミアナッツクッキー' },
+    { name: '塩バターサブレ<br>(4枚入り)', price: '¥400', image: './img/product-03.jpg', alt: '塩バターサブレ' },
+    { name: 'ビスコッティ ストロベリー<br>(2本入り)', price: '¥300', image: './img/product-04.jpg', alt: 'ビスコッティ ストロベリー' },
+    { name: 'ディアマンクッキーチョコ<br>(5枚入り)', price: '¥400', image: './img/product-05.jpg', alt: 'ディアマンクッキーチョコ' },
+    { name: 'チョコチップクッキー<br>(4枚入り)', price: '¥400', image: './img/product-06.jpg', alt: 'チョコチップクッキー' },
+    { name: 'メレンゲクッキー<br>(13個入り)', price: '¥400', image: './img/product-07.jpg', alt: 'メレンゲクッキー' },
+    { name: 'メレンゲプレッツェル<br>(4個入り)', price: '¥400', image: './img/product-08.jpg', alt: 'メレンゲプレッツェル' },
     { name: 'biscottiくんクッキー', price: '¥500', image: './img/product-09.jpg', alt: 'biscottiくんクッキー' },
-    { name: 'フロランタン(4個入り)', price: '¥400', image: './img/product-10.jpg', alt: 'フロランタン' },
-    { name: 'ビスコッティ コーヒー(2本入り)', price: '¥300', image: './img/product-11.jpg', alt: 'ビスコッティ コーヒー' },
-    { name: 'ビスコッティ チョコレート(2本入り)', price: '¥300', image: './img/product-12.jpg', alt: 'ビスコッティ チョコレート' }
+    { name: 'フロランタン<br>(4個入り)', price: '¥400', image: './img/product-10.jpg', alt: 'フロランタン' },
+    { name: 'ビスコッティ コーヒー<br>(2本入り)', price: '¥300', image: './img/product-11.jpg', alt: 'ビスコッティ コーヒー' },
+    { name: 'ビスコッティ チョコレート<br>(2本入り)', price: '¥300', image: './img/product-12.jpg', alt: 'ビスコッティ チョコレート' }
 ];
 
 // 商品カルーセルのHTMLを生成
 function generateProductCarousel() {
     const carouselTrack = document.getElementById('carouselTrack');
     if (!carouselTrack) return;
+    
+    // ECサイトのURL
+    const ecSiteUrl = 'https://biscotti-web.square.site/s/order#most-popular';
     
     // カルーセルをクリア
     carouselTrack.innerHTML = '';
@@ -111,6 +114,7 @@ function generateProductCarousel() {
         products.forEach((product, index) => {
             const productItem = document.createElement('div');
             productItem.className = 'carousel-item';
+            productItem.style.cursor = 'pointer';
             productItem.innerHTML = `
                 <div class="product-image">
                     <div class="image-placeholder">
@@ -122,6 +126,16 @@ function generateProductCarousel() {
                     <p class="product-price">${product.price}</p>
                 </div>
             `;
+            
+            // クリックイベントを追加
+            productItem.addEventListener('click', (e) => {
+                // カルーセルボタンのクリックイベントを防ぐ
+                if (e.target.closest('.carousel-btn')) {
+                    return;
+                }
+                window.open(ecSiteUrl, '_blank');
+            });
+            
             carouselTrack.appendChild(productItem);
         });
     }
